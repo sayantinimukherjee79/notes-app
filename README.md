@@ -80,7 +80,9 @@ npm install
 Create a .env file in backend:
 
 PORT = 3000
+
 MONGO_URI = mongodb+srv://sayantini:1234@cluster0.tpc1rc6.mongodb.net/
+
 SECRET_KEY=mysecretkey
 
 Run backend:
