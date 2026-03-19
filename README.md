@@ -69,6 +69,7 @@ notes-app/
 1️⃣ Clone the repository
 
 git clone https://github.com/sayantinimukherjee79/notes-app.git
+
 cd notes-app
 
 2️⃣ Backend Setup
