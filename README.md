@@ -75,6 +75,7 @@ cd notes-app
 2️⃣ Backend Setup
 
 cd backend
+
 npm install
 
 Create a .env file in backend:
@@ -89,8 +90,11 @@ Run backend:
 npm run dev
 
 3️⃣ Frontend Setup
+
 cd frontend
+
 npm install
+
 npm run dev
 
 🌐 Deployment
