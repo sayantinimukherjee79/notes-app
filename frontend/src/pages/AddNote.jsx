@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { LIVE_URL } from '../const'
 
 function AddNote() {
 
@@ -16,7 +17,7 @@ function AddNote() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token")
-      const response = await axios.post("http://localhost:3000/api/note/create",
+      const response = await axios.post(`${LIVE_URL}/api/note/create`,
          noteData,
         {
           headers: {

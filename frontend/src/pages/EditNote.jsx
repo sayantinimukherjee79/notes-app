@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { LIVE_URL } from '../const'
 
 function EditNote() {
 
@@ -17,7 +18,7 @@ function EditNote() {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token")
-      await axios.put(`http://localhost:3000/api/note/updateNote/${id}`,
+      await axios.put(`${LIVE_URL}/api/note/updateNote/${id}`,
         noteData,
         {
           headers: {
@@ -46,7 +47,7 @@ function EditNote() {
     const fetchSingleNote = async() => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(`http://localhost:3000/api/note/getNote/${id}`, {
+        const response = await axios.get(`${LIVE_URL}/api/note/getNote/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

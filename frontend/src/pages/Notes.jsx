@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
+import { LIVE_URL } from '../const'
 
 function Notes() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ function Notes() {
       try {
 
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:3000/api/note/getnotes",
+        const response = await axios.get(`${LIVE_URL}/api/note/getnotes`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -47,7 +48,7 @@ function Notes() {
 
       const token = localStorage.getItem("token");
 
-      await axios.delete(`http://localhost:3000/api/note/deletenote/${id}`,
+      await axios.delete(`${LIVE_URL}/api/note/deletenote/${id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`

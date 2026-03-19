@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
+import { LIVE_URL } from '../const'
 
 function Login() {
 
@@ -15,7 +16,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:3000/api/auth/login", formData)
+            const response = await axios.post(`${LIVE_URL}/api/auth/login`, formData)
             localStorage.setItem("token", response.data.token)
             toast.success("Login Successful");
             navigate("/dashboard");
