@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function EditNote() {
 
@@ -24,12 +25,12 @@ function EditNote() {
           }
         });
 
-      alert("Edited");
+      toast.success("Edited");
       navigate("/dashboard");
 
     } catch (error) {
       console.log(error)
-      console.log("note not edited")
+      toast.error("note not edited")
     }
   }
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 function AddNote() {
 
@@ -23,12 +24,12 @@ function AddNote() {
           }
         });
 
-      alert("note added");
+      toast.success("note added");
       navigate("/dashboard")
 
     } catch (error) {
       console.log(error)
-      alert("note not added")
+      toast.error("note not added")
     }
   }
 

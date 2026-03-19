@@ -5,11 +5,15 @@ import AddNote from './pages/AddNote'
 import EditNote from './pages/EditNote'
 import Dashboard from './pages/Dashboard'
 import {BrowserRouter,Routes,Route} from "react-router-dom"
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <div >
       <BrowserRouter>
+
+      <ToastContainer/>
+      
         <Routes>
 
           <Route path='/' element={<Register/>}/>

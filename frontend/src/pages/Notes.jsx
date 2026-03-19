@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 function Notes() {
   const navigate = useNavigate();
@@ -55,13 +56,13 @@ function Notes() {
 
       )
 
-      alert("note deleted");
+      toast.success("note deleted");
 
       setNotes(notes.filter(note => note._id !== id));
 
     }catch(error){
       console.log(error)
-      console.log("note not deleted")
+      toast.error("note not deleted")
     }
   }
 

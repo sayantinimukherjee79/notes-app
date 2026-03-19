@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 function Login() {
 
@@ -16,11 +17,11 @@ function Login() {
         try {
             const response = await axios.post("http://localhost:3000/api/auth/login", formData)
             localStorage.setItem("token", response.data.token)
-            alert("Login Successful");
+            toast.success("Login Successful");
             navigate("/dashboard");
         } catch (error) {
             console.log(error);
-            alert("login failed")
+            toast.error("login failed")
         }
     }
 
